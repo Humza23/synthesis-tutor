@@ -14,15 +14,20 @@ const Tutorial = () => {
       tutorialContent: (
         <>
           <h1>Addition using Base-10 Blocks for 2 digit numbers</h1>
-          <hr style={{ border: '1px solid #ccc', margin: '10px 0' }} /> {/* Visible line */}
-          <p>Welcome to the Addition using Base-10 Blocks Lesson for 2 digit numbers!</p>
+          <hr style={{ border: '1px solid #ccc', margin: '10px 0' }} />
+          <p>Hi, welcome to Synthesis Tutor! Today we will learn how to add 2 digit numbers using base ten blocks.</p>
         </>
       ),
       visualizationContent: {},
     },
     {
       type: 'instruction',
-      tutorialContent: `In this lesson, we'll explore addition using base-ten blocks. On the right side of the screen, you'll find an interactive area to play with virtual base-ten blocks. Let's start by understanding place value`,
+      tutorialContent: `On the right side of the screen, you'll find an interactive area to play with virtual base ten blocks.`,
+      visualizationContent: {},
+    },
+    {
+      type: 'instruction',
+      tutorialContent: `First, let's start by understanding place value and learning how base ten blocks can be used to help us add.`,
       visualizationContent: {},
     },
     {
@@ -117,7 +122,7 @@ const Tutorial = () => {
           <Visualization content={steps[step].visualizationContent.content} characterToStyle={steps[step].visualizationContent.characterToStyle} 
           onElementClick={handleInteractiveClick} />
         ) : (
-<Visualization content={steps[step].visualizationContent.content} characterToStyle={steps[step].visualizationContent.characterToStyle} />
+<Visualization content={steps[step].visualizationContent.content} characterToStyle={steps[step].visualizationContent.characterToStyle}/>
 
           
         )}
