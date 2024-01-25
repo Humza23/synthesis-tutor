@@ -1,5 +1,5 @@
 **Base-Ten Blocks React App**  
-This React app provides an interactive learning experience for addition using base-ten blocks with 2-digit numbers. It introduces students to the concept of addition through a virtual playground, allowing them to manipulate base-ten blocks for a hands-on learning experience.
+This React app provides an interactive learning experience for addition using base-ten blocks with 2-digit numbers. It introduces students to the concept of place value as well as how to identify the correct place value digits in an number. Students are able to work within a virtual playground, allowing them to manipulate base-ten blocks for a hands-on learning experience.
 
 **Demo**  
 You can try the app live here: https://synthesis-tutor-demo.netlify.app/
