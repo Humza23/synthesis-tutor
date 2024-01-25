@@ -8,12 +8,17 @@ const Visualization = ({ content, characterToStyle, selectedImageCounts, handleI
 
   return (
     <div>
+      {console.log('Content:', content)}
       <TaskBar handleInteractiveImageClick={handleInteractiveImageClick}/>
-      {content && content.split('').map((char, index) => (
-        <span key={index} style={index === characterToStyle ? { fontWeight: 'bold', textDecoration: 'underline', backgroundColor: 'black' } : {}}>
-          {char}
-        </span>
-      ))}
+      {characterToStyle !== null ? (
+  content && content.split('').map((char, index) => (
+    <span key={index} style={index === characterToStyle ? { fontWeight: 'bold', textDecoration: 'underline', backgroundColor: 'black' } : {}}>
+      {char}
+    </span>
+  ))
+) : (
+  <p className='visualizationTextOuput'>{content}</p>
+)}
       {selectedImageCounts && 
 <div className="selected-images">
         {selectedImageCounts.tens > 0 && (

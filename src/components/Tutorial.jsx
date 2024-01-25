@@ -116,11 +116,8 @@ const Tutorial = () => {
       type: 'instruction',
       tutorialContent: 'End of Demo Content',
       visualizationContent: {
-        content: (
-          <>
-          <p> Thank You for going through this demo =] </p>
-         </> 
-        )
+        content: 'Thank You for going through this demo =]',
+        characterToStyle: null,
       }
     },
   ];
