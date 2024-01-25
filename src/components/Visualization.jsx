@@ -3,7 +3,7 @@ import TaskBar from './Taskbar';
 import onesBlockImage from '../images/onesBlockImage.jpeg'
 import tensBlockImage from '../images/tensBlockImage.jpeg'
 
-const Visualization = ({ content, characterToStyle, selectedImageCounts, handleInteractiveImageClick  }) => {
+const Visualization = ({ content, characterToStyle, selectedImageCounts, handleInteractiveImageClick, handleDecrementImageClick  }) => {
 
 
   return (
@@ -19,14 +19,14 @@ const Visualization = ({ content, characterToStyle, selectedImageCounts, handleI
         {selectedImageCounts.tens > 0 && (
           <div className="selected-image">
             {[...Array(selectedImageCounts.tens)].map((_, index) => (
-              <img className="visualizedBlockImg tens" key={index} src={tensBlockImage} alt="TaskBar Image Tens" />
+              <img className="visualizedBlockImg tens" key={index} src={tensBlockImage} alt="TaskBar Image Tens" onClick={() => handleDecrementImageClick('tens')}/>
               ))}
           </div>
         )}
         {selectedImageCounts.ones > 0 && (
           <div className="selected-image">
             {[...Array(selectedImageCounts.ones)].map((_, index) => (
-              <img className="visualizedBlockImg ones" key={index} src={onesBlockImage} alt="TaskBar Image Ones" />
+              <img className="visualizedBlockImg ones" key={index} src={onesBlockImage} alt="TaskBar Image Ones" onClick={() => handleDecrementImageClick('ones')} />
               ))}
           </div>
         )}

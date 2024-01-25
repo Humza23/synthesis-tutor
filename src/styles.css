@@ -4,6 +4,7 @@ body {
     background-color: #282c34;
     color: #ffffff;
     font-family: 'Exo 2', sans-serif;
+
   }
   
   .app-container {
@@ -33,7 +34,7 @@ body {
   }
   
   .text-container {
-    font-size: 1.25rem;
+    font-size: .75rem;
     height: 100vh;
   }
   
@@ -88,7 +89,7 @@ body {
   }
   
   .task-bar-image:hover {
-    background-color: #34495e; /* Darker background on hover */
+    background-color: #34495e;
   }
 
 
@@ -123,7 +124,7 @@ body {
   .selected-image{
   width: 80%;
   margin: 10px;
-  border: 3px solid black;
+
   transition: transform 0.3s ease;
 
 }
@@ -149,4 +150,19 @@ body {
 
 .visualizedBlockImg:hover {
   transform: scale(1.1);
+}
+
+.button:disabled {
+  background-color: #7f8c8d;
+  color: #bdc3c7;
+  cursor: not-allowed;
+
+}
+
+
+/* media query */
+@media (min-width: 1024px) {
+  .text-container {
+    font-size: 1.25rem; /* Increase font size for larger screens */
+  }
 }
