@@ -1,4 +1,4 @@
-<!-- 
+<!--
 
 Welcome Message: Display a welcome message: "Welcome to the Addition using Base-10 Blocks Lesson!"
 Introduction to Columns:

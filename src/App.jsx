@@ -1,7 +1,7 @@
-import React from 'react';
-import Tutorial from './components/Tutorial';
+import React from "react";
+import Tutorial from "./components/Tutorial";
 
-import './styles.css';
+import "./styles.css";
 
 const App = () => {
   return (
