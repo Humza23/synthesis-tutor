@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import TaskBar from './Taskbar';
+import onesBlockImage from '../images/onesBlockImage.jpeg'
+import tensBlockImage from '../images/tensBlockImage.jpeg'
 
 const Visualization = ({ content, characterToStyle, selectedImageCounts, handleInteractiveImageClick  }) => {
 
@@ -14,17 +16,17 @@ const Visualization = ({ content, characterToStyle, selectedImageCounts, handleI
       ))}
       {selectedImageCounts && 
 <div className="selected-images">
-        {selectedImageCounts.ones > 0 && (
-          <div className="selected-image">
-            {[...Array(selectedImageCounts.ones)].map((_, index) => (
-              <img className="visualizedBlockImg" key={index} src="https://www.clipartmax.com/png/small/15-153859_cube-clipart-ten-base-base-ten-blocks.png" alt="TaskBar Image Tens" />
-              ))}
-          </div>
-        )}
         {selectedImageCounts.tens > 0 && (
           <div className="selected-image">
             {[...Array(selectedImageCounts.tens)].map((_, index) => (
-              <img className="visualizedBlockImg" key={index} src="https://www.clipartmax.com/png/small/15-153859_cube-clipart-ten-base-base-ten-blocks.png" alt="TaskBar Image Tens" />
+              <img className="visualizedBlockImg tens" key={index} src={tensBlockImage} alt="TaskBar Image Tens" />
+              ))}
+          </div>
+        )}
+        {selectedImageCounts.ones > 0 && (
+          <div className="selected-image">
+            {[...Array(selectedImageCounts.ones)].map((_, index) => (
+              <img className="visualizedBlockImg ones" key={index} src={onesBlockImage} alt="TaskBar Image Ones" />
               ))}
           </div>
         )}

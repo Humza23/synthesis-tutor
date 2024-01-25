@@ -93,8 +93,8 @@ body {
 
 
   .task-bar-image img {
-    max-width: 70px; 
-    max-height: 70px;
+    width: 25px; 
+    height: 70px;
     border: 2px solid black;
     height: auto;
     margin-bottom: 10px;
@@ -113,7 +113,7 @@ body {
   
   .selected-images {
     display: flex;
-    align-items: flex-start; /* Align items to the start of the container */
+    align-items: flex-start;
     justify-content: center;
     width: 80%;
     margin: 0 auto;
@@ -121,24 +121,32 @@ body {
 
 
   .selected-image{
+  width: 80%;
   margin: 10px;
   border: 3px solid black;
-  transition: transform 0.3s ease; /* Add a transition effect to the transform property */
+  transition: transform 0.3s ease;
 
 }
 .selected-image:hover {
-  transform: scale(1.1); /* Add a slight scale effect on hover for visual feedback */
+  transform: scale(1.1);
 }
 
-.visualizedBlockImg {
-  max-width: 10rem;
+.visualizedBlockImg.ones{
+  width: 2.25rem;
   margin: 5px;
-  max-height: 12rem;
-  border: 5px solid red;
-  height: 10rem;
-  transition: transform 0.3s ease; /* Add a transition effect to the transform property */
+  height: 2.5rem;
+  border: 1px solid blue;
+  transition: transform 0.3s ease;
+}
+.visualizedBlockImg.tens{
+  width: 1.7rem;
+  margin: 5px;
+  height: 2.5rem;
+  border: 1px solid blue;
+  height: 5rem;
+  transition: transform 0.3s ease;
 }
 
 .visualizedBlockImg:hover {
-  transform: scale(1.1); /* Add a slight scale effect on hover for visual feedback */
+  transform: scale(1.1);
 }
