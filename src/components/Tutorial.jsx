@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import Visualization from './Visualization';
+import Taskbar from './Taskbar';
 import '../styles.css';
 
 const Tutorial = () => {
   const [step, setStep] = useState(0);
   const [answer, setAnswer] = useState('');
   const [answerFeedback, setAnswerFeedback] = useState('');
+  const [selectedImageCounts, setSelectedImageCounts] = useState({ ones: 0, tens: 0 });
 
 
   const steps = [
@@ -52,7 +54,14 @@ const Tutorial = () => {
     },
     {
       type: 'interactive',
-      tutorialContent: 'How many ones are there in the number to the right?',
+      tutorialContent: (
+        <>
+        <h2>Here is your first interactive lesson. In the toolbar on the right, click the base ten blocks to help you solve the answer.</h2>
+        <hr style={{ border: '1px solid #ccc', margin: '10px 0' }} />
+        <h3 className='question'>How many ones are there in the number to the right?</h3>
+        <p className='questionHint'>Hint: Since this is your first question, click the units and count until you reach the number in the ones column </p>
+        </>
+      ),
       answer: '7',
       visualizationContent: {
         content: '17',
@@ -69,6 +78,7 @@ const Tutorial = () => {
   const handleNext = () => {
     if (step < steps.length - 1) {
       setStep((prevStep) => prevStep + 1);
+      setSelectedImageCounts({ ones: 0, tens: 0 });
       setAnswer(''); // Clear the answer when moving to the next step
       setAnswerFeedback('')
     }else{
@@ -77,7 +87,7 @@ const Tutorial = () => {
     console.log(step);
   };
 
-  const handleInteractiveClick = () => {
+  const handleAnswerSubmit = () => {
     if (answer.trim() === steps[step].answer) {
       console.log('Correct answer! - You may press next');
       setAnswerFeedback('Correct answer')
@@ -94,6 +104,10 @@ const Tutorial = () => {
     setAnswer(event.target.value);
   };
 
+  const handleInteractiveImageClick = (imageType) => {
+    setSelectedImageCounts((prevCounts) => ({ ...prevCounts, [imageType]: prevCounts[imageType] + 1 }));
+  };
+
   return (
     <div className="split-screen">
       <div className="text-container">
@@ -107,7 +121,7 @@ const Tutorial = () => {
           placeholder="Type your answer..."
           style={{ marginTop: '10px', marginRight: '5px' }}
           />
-        <button className="button" onClick={handleInteractiveClick}>Submit</button>
+        <button className="button" onClick={handleAnswerSubmit}>Submit</button>
         <p>{answerFeedback}</p>
         
 
@@ -120,8 +134,7 @@ const Tutorial = () => {
       </div>
       <div className="visualization-container">
         {steps[step].type === 'interactive' ? (
-          <Visualization content={steps[step].visualizationContent.content} characterToStyle={steps[step].visualizationContent.characterToStyle} 
-          onElementClick={handleInteractiveClick} />
+          <Visualization content={steps[step].visualizationContent.content} characterToStyle={steps[step].visualizationContent.characterToStyle} selectedImageCounts={selectedImageCounts} handleInteractiveImageClick={handleInteractiveImageClick}/>
         ) : (
 <Visualization content={steps[step].visualizationContent.content} characterToStyle={steps[step].visualizationContent.characterToStyle}/>
 
