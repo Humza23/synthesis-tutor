@@ -15,7 +15,8 @@ const Tutorial = () => {
       tutorialContent: (
         <>
           <h1>Addition using Base-10 Blocks for 2 digit numbers</h1>
-          <hr style={{ border: '1px solid #ccc', margin: '10px 0' }} />
+                          <hr style={{ border: '1px solid #ccc', margin: '10px 0', width: '35%' }} />
+
           <p>Hi, welcome to Synthesis Tutor! Today we will learn how to add 2 digit numbers using base ten blocks.</p>
         </>
       ),
@@ -53,7 +54,8 @@ const Tutorial = () => {
       tutorialContent: (
         <>
                 <h2>Here is your first interactive lesson. In the toolbar on the right, click the base ten blocks to help you solve the answer. If you need to remove the blocks, click on the blocks you would like to remove</h2>
-                <hr style={{ border: '1px solid #ccc', margin: '10px 0' }} />
+                <hr style={{ border: '1px solid #ccc', margin: '10px 0', width: '35%' }} />
+
         <p>The number in the ones column here is underlined and highlighted. The ones column represents individual units or ones. You can use single blocks to represent numbers from 1 to 9</p>
         <p> Try placing 4 units to demonstrate the ones in this number</p>
         <p> What number is in the ones column? </p>
@@ -84,7 +86,8 @@ const Tutorial = () => {
       tutorialContent: (
         <>
         <p>The number that is underlined and highlighted is in the tens column. You can use rods to demonstrate how many sets of tens are in a number. That is the job of the tens column!</p>
-        <hr style={{ border: '1px solid #ccc', margin: '10px 0' }} />
+                        <hr style={{ border: '1px solid #ccc', margin: '10px 0', width: '35%' }} />
+
         <p> Try placing 2 rods to demonstrate the tens in this number</p>
         <p> What number is in the ones column? </p>
         </>
@@ -101,7 +104,8 @@ const Tutorial = () => {
       tutorialContent: (
         <>
         <h2>Here is another interactive lesson. In the toolbar on the right, click the base ten blocks to help you solve the answer.</h2>
-        <hr style={{ border: '1px solid #ccc', margin: '10px 0' }} />
+                        <hr style={{ border: '1px solid #ccc', margin: '10px 0', width: '35%' }} />
+
         <h3 className='question'>How many tens are there in the number to the right?</h3>
         <p className='questionHint'> Use the rods in the virtual playground to help find the answer</p>
         </>
@@ -165,7 +169,7 @@ const Tutorial = () => {
   return (
     <div className="split-screen">
       <div className="text-container">
-        <p>{steps[step].tutorialContent}</p>
+        {steps[step].tutorialContent}
         {steps[step].type === 'interactive' && (
         <div>
         <input
