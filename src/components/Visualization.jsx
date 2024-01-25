@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import TaskBar from './Taskbar';
 import onesBlockImage from '../images/onesBlockImage.jpeg'
 import tensBlockImage from '../images/tensBlockImage.jpeg'
