@@ -70,6 +70,7 @@ const Tutorial = () => {
     if (step < steps.length - 1) {
       setStep((prevStep) => prevStep + 1);
       setAnswer(''); // Clear the answer when moving to the next step
+      setAnswerFeedback('')
     }else{
       setStep(0)
     }
