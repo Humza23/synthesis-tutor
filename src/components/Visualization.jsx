@@ -2,6 +2,8 @@ import React from 'react';
 import TaskBar from './Taskbar';
 import onesBlockImage from '../images/onesBlockImage.jpeg'
 import tensBlockImage from '../images/tensBlockImage.jpeg'
+import { motion } from 'framer-motion';
+
 
 const Visualization = ({ content, characterToStyle, selectedImageCounts, handleInteractiveImageClick, handleDecrementImageClick  }) => {
 
@@ -24,14 +26,32 @@ const Visualization = ({ content, characterToStyle, selectedImageCounts, handleI
         {selectedImageCounts.tens > 0 && (
           <div className="selected-image">
             {[...Array(selectedImageCounts.tens)].map((_, index) => (
-              <img className="visualizedBlockImg tens" key={index} src={tensBlockImage} alt="TaskBar Image Tens" onClick={() => handleDecrementImageClick('tens')}/>
+              <motion.img
+              className="visualizedBlockImg tens"
+              key={index}
+              src={tensBlockImage}
+              alt="TaskBar Image Tens"
+              onClick={() => handleDecrementImageClick('tens')}
+              initial={{ opacity: 0, scale: 0.5 }} 
+              animate={{ opacity: 1, scale: 1 }}    
+              transition={{ duration: 0.5 }}        
+            />
               ))}
           </div>
         )}
         {selectedImageCounts.ones > 0 && (
           <div className="selected-image">
             {[...Array(selectedImageCounts.ones)].map((_, index) => (
-              <img className="visualizedBlockImg ones" key={index} src={onesBlockImage} alt="TaskBar Image Ones" onClick={() => handleDecrementImageClick('ones')} />
+              <motion.img
+              className="visualizedBlockImg ones"
+              key={index}
+              src={onesBlockImage}
+              alt="TaskBar Image Ones"
+              onClick={() => handleDecrementImageClick('ones')}
+              initial={{ opacity: 0, scale: 0.5 }} 
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+            />
               ))}
           </div>
         )}
