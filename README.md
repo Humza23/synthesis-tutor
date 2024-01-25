@@ -20,6 +20,6 @@ Install dependencies: npm install
 **Usage**  
 Follow the instructions in the app to learn and practice addition using base-ten blocks. Interact with the virtual playground and answer questions to progress through the lessons.
 
-*Technologies Used*  
--React
--Framer Motion (for base 10 block animations)
+**Technologies Used**
+*-React
+-Framer Motion (for base 10 block animations)*
